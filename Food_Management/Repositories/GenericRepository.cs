@@ -5,26 +5,26 @@ namespace Food_Management.Repositories
 	public class GenericRepository<T> where T: class, new()
 	{
 		Context c = new Context();
-		public List<T> CategoryList()
+		public List<T> TList()
 		{
 			return c.Set<T>().ToList();
 		}
-		public void CategoryAdd(T t)
+		public void TAdd(T t)
 		{
 			c.Set<T>().Add(t);
 			c.SaveChanges();
 		}
-		public void CategoryDelete(T t)
+		public void TDelete(T t)
 		{
 			c.Set<T>().Remove(t);
 			c.SaveChanges();
 		}
-		public void CategoryUpdate(T t)
+		public void TUpdate(T t)
 		{
 			c.Set<T>().Update(t);
 			c.SaveChanges();
 		}
-		public void GetCategory(int id)
+		public void TGet(int id)
 		{
 			c.Set<T>().Find(id);
 		}
