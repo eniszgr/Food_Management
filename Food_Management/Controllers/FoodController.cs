@@ -1,4 +1,5 @@
-﻿using Food_Management.Repositories;
+﻿using Food_Management.Data.Models;
+using Food_Management.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Food_Management.Controllers
@@ -8,7 +9,7 @@ namespace Food_Management.Controllers
         public IActionResult Index()
         {
             FoodRepository foodRepository = new FoodRepository();
-            return View(foodRepository.TList());
+            return View(foodRepository.TList("Category"));
         }
     }
 }

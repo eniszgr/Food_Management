@@ -1,4 +1,5 @@
 ﻿using Food_Management.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Food_Management.Repositories
 {
@@ -28,5 +29,10 @@ namespace Food_Management.Repositories
 		{
 			c.Set<T>().Find(id);
 		}
-	}
+		//to get name of category each food
+        public List<T> TList(string p)
+		{
+			return c.Set<T>().Include(p).ToList();
+		}
+    }
 }

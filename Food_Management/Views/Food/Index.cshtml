@@ -20,11 +20,11 @@
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.FoodID</td>
+            <th>@x.FoodID</th>
             <td>@x.Name</td>
             <td>@x.Price</td>
             <td>@x.Stock</td>
-            <td></td>
+            <td>@x.Category.CategoryName</td>
             <td><a href="#" class="btn btn-danger">Delete</a></td>
             <td><a href="#" class="btn btn-success">Update</a></td>
             <td><a href="#" class="btn btn-success">Details</a></td>
