@@ -9,7 +9,7 @@ namespace Food_Management.Controllers
         public IActionResult Index()
         {
             FoodRepository foodRepository = new FoodRepository();
-            return View(foodRepository.TList("Category"));
+            return View(foodRepository.TList("Category"));      //give a parameter to reach this data type
         }
     }
 }

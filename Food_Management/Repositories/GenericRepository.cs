@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Food_Management.Repositories
 {
-	public class GenericRepository<T> where T: class, new()
+	public class GenericRepository<T> where T: class, new() // 'T' for class
 	{
 		Context c = new Context();
 		public List<T> TList()
 		{
-			return c.Set<T>().ToList();
+			return c.Set<T>().ToList(); // Set<T>() to arrange class
 		}
 		public void TAdd(T t)
 		{
