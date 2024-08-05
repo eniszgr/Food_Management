@@ -10,8 +10,7 @@ namespace Food_Management.Controllers
         CategoryRepository categoryRepository = new CategoryRepository();
 
         public IActionResult Index()
-        {
-           
+        {  
             return View(categoryRepository.TList());
         }
         [HttpGet]
@@ -19,7 +18,13 @@ namespace Food_Management.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult CategoryAdd(Category p) {
+        public IActionResult CategoryAdd(Category p)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View("CategoryAdd");
+            }
+
             categoryRepository.TAdd(p);
             return RedirectToAction("Index");
         }

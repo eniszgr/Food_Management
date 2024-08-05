@@ -5,8 +5,6 @@ namespace Food_Management.Repositories
 	
 	public class CategoryRepository : GenericRepository<Category>
 	{
-		
-
 
 	}
 }

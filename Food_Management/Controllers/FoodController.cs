@@ -11,5 +11,15 @@ namespace Food_Management.Controllers
             FoodRepository foodRepository = new FoodRepository();
             return View(foodRepository.TList("Category"));      //give a parameter to reach this data type
         }
+        [HttpGet]
+        public IActionResult AddFood()
+        {
+           return View();
+        }
+        [HttpPost]  
+        public IActionResult AddFood(Food p)
+        {
+            return View();
+        }
     }
 }
