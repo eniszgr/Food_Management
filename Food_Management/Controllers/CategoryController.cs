@@ -20,8 +20,6 @@ namespace Food_Management.Controllers
         [HttpPost]
         public IActionResult CategoryAdd(Category p)
         {
-            
-            
             categoryRepository.TAdd(p);
           
             return RedirectToAction("Index");
