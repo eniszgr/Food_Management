@@ -20,12 +20,10 @@ namespace Food_Management.Controllers
         [HttpPost]
         public IActionResult CategoryAdd(Category p)
         {
-            if(!ModelState.IsValid)
-            {
-                return View("CategoryAdd");
-            }
-
+            
+            
             categoryRepository.TAdd(p);
+          
             return RedirectToAction("Index");
         }
     }
