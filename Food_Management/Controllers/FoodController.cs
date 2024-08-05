@@ -1,11 +1,13 @@
 ﻿using Food_Management.Data.Models;
 using Food_Management.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Food_Management.Controllers
 {
     public class FoodController : Controller
     {
+        Context _context = new Context();
         public IActionResult Index()
         {
             FoodRepository foodRepository = new FoodRepository();
@@ -14,7 +16,14 @@ namespace Food_Management.Controllers
         [HttpGet]
         public IActionResult AddFood()
         {
-           return View();
+            List<SelectListItem> values = (from x in _context.Categories.ToList() 
+                                           select new SelectListItem 
+                                           {
+                                                Text = x.CategoryName,
+                                                Value = x.CategoryID.ToString()
+                                           }).ToList();
+            ViewBag.v1 = values;
+            return View();
         }
         [HttpPost]  
         public IActionResult AddFood(Food p)
