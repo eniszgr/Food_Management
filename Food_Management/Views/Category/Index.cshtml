@@ -10,6 +10,7 @@
     <tr>
         <th>ID</th>
         <th>Categroy Name</th>
+        <th>Status</th>
         <th>Delete</th>
         <th>Update</th>
     </tr>
@@ -18,8 +19,9 @@
         <tr>
             <td>@x.CategoryID</td>
             <td>@x.CategoryName</td>
+            <td>@x.Status</td>
             <td><a href="#" class="btn btn-danger">Delete</a></td>
-            <td><a href="#" class="btn btn-success">Update</a></td>
+            <td><a href="/Category/CategoryGet/@x.CategoryID" class="btn btn-success">Update</a></td>
         </tr>
     } 
 </table>

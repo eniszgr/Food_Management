@@ -24,5 +24,31 @@ namespace Food_Management.Controllers
           
             return RedirectToAction("Index");
         }
+
+        public IActionResult CategoryGet(int id) 
+        {
+            var x = categoryRepository.TGet(id);
+            Category ct = new Category()
+            {
+                CategoryName = x.CategoryName,
+                CategoryDescription = x.CategoryDescription,
+                CategoryID = x.CategoryID,
+            };
+            return View(ct);
+        }
+
+        [HttpPost]
+        public IActionResult CategoryUpdate(Category p)
+        {
+            var x = categoryRepository.TGet(p.CategoryID);
+            x.CategoryName=p.CategoryName;
+            x.CategoryDescription = p.CategoryDescription;
+            x.Status = true;
+            categoryRepository.TUpdate(x);
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }

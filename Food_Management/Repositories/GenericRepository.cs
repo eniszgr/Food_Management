@@ -25,9 +25,9 @@ namespace Food_Management.Repositories
 			c.Set<T>().Update(t);
 			c.SaveChanges();
 		}
-		public void TGet(int id)
+		public T TGet(int id)
 		{
-			c.Set<T>().Find(id);
+			return c.Set<T>().Find(id);
 		}
 		//to get name of category each food
         public List<T> TList(string p)
