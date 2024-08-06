@@ -8,9 +8,10 @@ namespace Food_Management.Controllers
     public class FoodController : Controller
     {
         Context _context = new Context();
+        FoodRepository foodRepository = new FoodRepository();
         public IActionResult Index()
         {
-            FoodRepository foodRepository = new FoodRepository();
+            
             return View(foodRepository.TList("Category"));      //give a parameter to reach this data type
         }
         [HttpGet]
@@ -28,7 +29,14 @@ namespace Food_Management.Controllers
         [HttpPost]  
         public IActionResult AddFood(Food p)
         {
-            return View();
+            foodRepository.TAdd(p);
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteFood(int id)
+        {
+            
+            foodRepository.TDelete(new Food { FoodID= id});
+            return RedirectToAction("Index");
         }
     }
 }
