@@ -37,7 +37,7 @@ namespace Food_Management.Controllers
             return View(ct);
         }
 
-        [HttpPost]
+        [HttpPost]  
         public IActionResult CategoryUpdate(Category p)
         {
             var x = categoryRepository.TGet(p.CategoryID);
