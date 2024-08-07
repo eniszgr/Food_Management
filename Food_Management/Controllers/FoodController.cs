@@ -2,6 +2,8 @@
 using Food_Management.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace Food_Management.Controllers
 {
@@ -9,10 +11,10 @@ namespace Food_Management.Controllers
     {
         Context _context = new Context();
         FoodRepository foodRepository = new FoodRepository();
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
             
-            return View(foodRepository.TList("Category"));      //give a parameter to reach this data type
+            return View(foodRepository.TList("Category").ToPagedList(page,3));      //give a parameter to reach this data type
         }
         [HttpGet]
         public IActionResult AddFood()
