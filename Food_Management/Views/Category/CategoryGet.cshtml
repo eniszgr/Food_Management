@@ -35,7 +35,7 @@
     @using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
     {
         @Html.LabelFor(x => x.CategoryID)
-        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control", @disabled = "disabled" })
+        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control", @disabled = "disabled" }) <!-- User can not change it -->
         @Html.HiddenFor(x => x.CategoryID) <!-- Hidden input to submit the value -->
         <br></br>
         @Html.LabelFor(x => x.CategoryName)
@@ -48,7 +48,7 @@
     }
     <script>
         $(document).ready(function () {
-            // Formu doğrulama kurallarını belirleyin
+            // to check
             $("form").validate({
                 rules: {
                     CategoryName: {
@@ -57,7 +57,7 @@
                         maxlength: 20
                     },
                     CategoryDescription: {
-                        required: false // Opsiyonel, boş bırakılabilir
+                        required: false 
                     }
                 },
                 messages: {
@@ -68,13 +68,13 @@
                     }
                 },
                 errorPlacement: function (error, element) {
-                    error.insertAfter(element); // Hata mesajını ilgili elemanın altına yerleştir
+                    error.insertAfter(element); // add error message under the line of textbox
                 },
                 highlight: function (element, errorClass, validClass) {
-                    $(element).addClass(errorClass); // Hata olan elemanı işaretle
+                    $(element).addClass(errorClass); // marks the wrong textbox
                 },
                 unhighlight: function (element, errorClass, validClass) {
-                    $(element).removeClass(errorClass); // Geçerli olan elemandan işareti kaldır
+                    $(element).removeClass(errorClass); // remove the mark
                 }
             });
         });

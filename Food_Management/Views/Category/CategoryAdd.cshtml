@@ -44,8 +44,8 @@
         <button class="btn btn-info">Add Category</button>
     }
     <script>
-        $(document).ready(function() {
-            // Formu doğrulama kurallarını belirleyin
+        $(document).ready(function () {
+            // to check
             $("form").validate({
                 rules: {
                     CategoryName: {
@@ -54,7 +54,7 @@
                         maxlength: 20
                     },
                     CategoryDescription: {
-                        required: false // Opsiyonel, boş bırakılabilir
+                        required: false
                     }
                 },
                 messages: {
@@ -64,14 +64,14 @@
                         maxlength: "Category name cannot be more than 20 characters long"
                     }
                 },
-                errorPlacement: function(error, element) {
-                    error.insertAfter(element); // Hata mesajını ilgili elemanın altına yerleştir
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element); // add error message under the line of textbox
                 },
-                highlight: function(element, errorClass, validClass) {
-                    $(element).addClass(errorClass); // Hata olan elemanı işaretle
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass(errorClass); // marks the wrong textbox
                 },
-                unhighlight: function(element, errorClass, validClass) {
-                    $(element).removeClass(errorClass); // Geçerli olan elemandan işareti kaldır
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass(errorClass); // remove the mark
                 }
             });
         });

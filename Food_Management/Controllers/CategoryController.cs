@@ -47,6 +47,13 @@ namespace Food_Management.Controllers
             categoryRepository.TUpdate(x);
             return RedirectToAction("Index");
         }
+        public IActionResult CategoryDelete(int id)
+        {
+            var x =categoryRepository.TGet(id);
+            x.Status = false;
+            categoryRepository.TUpdate(x);
+            return RedirectToAction("Index");
+        }
 
 
 
