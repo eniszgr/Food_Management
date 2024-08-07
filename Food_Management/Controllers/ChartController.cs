@@ -6,40 +6,7 @@ namespace Food_Management.Controllers
 {
     public class ChartController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult Index2()
-        {
-            return View();
-        }
-
-        public IActionResult VisualizeProductResult() {
-            return Json(ProList());
-        }
-
-        public List<Class1> ProList() {
-            List<Class1> cs = new List<Class1>();
-            cs.Add(new Class1()
-            {
-                proname="Computer",
-                stock=150
-            });
-            cs.Add(new Class1()
-            {
-                proname = "Lcd",
-                stock = 75
-            });
-            cs.Add(new Class1()
-            {
-                proname = "USB Disk",
-                stock = 220
-            });
-            return cs;
-
         
-        }
 
         public IActionResult Index3()
         {
@@ -66,7 +33,47 @@ namespace Food_Management.Controllers
         {
             return View();
         }
-       
+
+
+        //Index and Index2 for demo
+        public IActionResult Index()
+        {
+            return View();
+        }
+        public IActionResult Index2()
+        {
+            return View();
+        }
+
+        public IActionResult VisualizeProductResult()
+        {
+            return Json(ProList());
+        }
+
+        public List<Class1> ProList()
+        {
+            List<Class1> cs = new List<Class1>();
+            cs.Add(new Class1()
+            {
+                proname = "Computer",
+                stock = 150
+            });
+            cs.Add(new Class1()
+            {
+                proname = "Lcd",
+                stock = 75
+            });
+            cs.Add(new Class1()
+            {
+                proname = "USB Disk",
+                stock = 220
+            });
+            return cs;
+
+
+        }
+
+
 
     }
 }
