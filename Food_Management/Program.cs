@@ -9,8 +9,8 @@ var app = builder.Build();
 
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
+app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthentication();
@@ -21,4 +21,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Category}/{action=Index}/{id?}");
 
+app.UseStaticFiles();
 app.Run();

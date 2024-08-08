@@ -16,11 +16,11 @@ namespace Food_Management.Controllers
         {
             return Json(FoodList());
         }
-        public List<Class2> FoodList()
+        public List<forCharts> FoodList()
         {
-            List<Class2> cs2 = new List<Class2>();
+            List<forCharts> cs2 = new List<forCharts>();
             using (var c = new Context()) { 
-                     cs2=c.Foods.Select(x=> new Class2
+                     cs2=c.Foods.Select(x=> new forCharts
                      {
                          foodname=x.Name,
                          stock=x.Stock
@@ -71,6 +71,11 @@ namespace Food_Management.Controllers
             return cs;
 
 
+        }
+
+        public IActionResult Statistics()
+        {
+            return View();
         }
 
 
