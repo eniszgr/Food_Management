@@ -1,6 +1,7 @@
 ﻿using Food_Management.Data;
 using Microsoft.AspNetCore.Mvc;
 using Food_Management.Data.Models;
+using NuGet.Packaging.Signing;
 
 namespace Food_Management.Controllers
 {
@@ -107,6 +108,17 @@ namespace Food_Management.Controllers
 
             var value9 = c.Foods.Average(x => x.Price).ToString("0.00");
             ViewBag.v9 = value9;
+
+            var value10 = c.Categories.Where(x => x.CategoryName == "Fruits").Select(y => y.CategoryID).FirstOrDefault();
+            var value10p= c.Foods.Where(y=>y.CategoryID==value10).Sum(x=>x.Stock);
+            ViewBag.v10 = value10p;
+
+            var value11 = c.Categories.Where(x => x.CategoryName == "Vegetables").Select(y => y.CategoryID).FirstOrDefault();
+            var value11p = c.Foods.Where(y => y.CategoryID == value11).Sum(x => x.Stock);
+            ViewBag.v11 = value11p;
+
+            var value12=c.Foods.OrderByDescending(x => x.Price).Select(y => y.Name).FirstOrDefault();
+            ViewBag.v12=value12;
 
             return View();
         }
