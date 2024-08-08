@@ -82,14 +82,22 @@ namespace Food_Management.Controllers
             var value2 = c.Categories.Count();
             ViewBag.v2 = value2;
 
-            var value3 = c.Foods.Where(x=>x.CategoryID==1).Count();
+            var foid = c.Categories.Where(x=>x.CategoryName=="Fruits")
+                .Select(y=>y.CategoryID).FirstOrDefault();
+
+            var value3 = c.Foods.Where(x=>x.CategoryID==foid).Count();
             ViewBag.v3 = value3;
 
-            var value4 = c.Foods.Where(x=>x.CategoryID==2).Count();
+            var value4 = c.Foods.Where(x=>x.CategoryID==c.Categories.Where(z=>z.CategoryName=="Vegetables")
+            .Select(y=>y.CategoryID).FirstOrDefault()).Count();
             ViewBag.v4 = value4;
 
             var value5 = c.Foods.Sum(x => x.Stock);
             ViewBag.v5 = value5;
+
+            var value6 = c.Foods.Where(x=>x.CategoryID==c.Categories.Where(z=>z.CategoryName=="Legumes")
+            .Select(y=>y.CategoryID).FirstOrDefault()).Count();    
+            ViewBag.v6= value6;
 
 
             return View();
