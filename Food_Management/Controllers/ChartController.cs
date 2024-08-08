@@ -99,6 +99,14 @@ namespace Food_Management.Controllers
             .Select(y=>y.CategoryID).FirstOrDefault()).Count();    
             ViewBag.v6= value6;
 
+            var value7 =c.Foods.OrderByDescending(x=>x.Stock).Select(y=>y.Name).FirstOrDefault();
+            ViewBag.v7 = value7;
+
+            var value8 = c.Foods.OrderBy(x => x.Stock).Select(y => y.Name).FirstOrDefault();
+            ViewBag.v8 = value8;
+
+            var value9 = c.Foods.Average(x => x.Price).ToString("0.00");
+            ViewBag.v9 = value9;
 
             return View();
         }
