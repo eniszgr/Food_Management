@@ -83,10 +83,8 @@ namespace Food_Management.Controllers
             var value2 = c.Categories.Count();
             ViewBag.v2 = value2;
 
-            var foid = c.Categories.Where(x=>x.CategoryName=="Fruits")
-                .Select(y=>y.CategoryID).FirstOrDefault();
-
-            var value3 = c.Foods.Where(x=>x.CategoryID==foid).Count();
+            var value3 = c.Foods.Where(x=>x.CategoryID== c.Categories.Where(x => x.CategoryName == "Fruits")
+                .Select(y => y.CategoryID).FirstOrDefault()).Count();
             ViewBag.v3 = value3;
 
             var value4 = c.Foods.Where(x=>x.CategoryID==c.Categories.Where(z=>z.CategoryName=="Vegetables")
@@ -109,13 +107,13 @@ namespace Food_Management.Controllers
             var value9 = c.Foods.Average(x => x.Price).ToString("0.00");
             ViewBag.v9 = value9;
 
-            var value10 = c.Categories.Where(x => x.CategoryName == "Fruits").Select(y => y.CategoryID).FirstOrDefault();
-            var value10p= c.Foods.Where(y=>y.CategoryID==value10).Sum(x=>x.Stock);
-            ViewBag.v10 = value10p;
+            
+            var value10= c.Foods.Where(y=>y.CategoryID== c.Categories.Where(x => x.CategoryName == "Fruits").Select(y => y.CategoryID).FirstOrDefault()).Sum(x=>x.Stock);
+            ViewBag.v10 = value10;
 
-            var value11 = c.Categories.Where(x => x.CategoryName == "Vegetables").Select(y => y.CategoryID).FirstOrDefault();
-            var value11p = c.Foods.Where(y => y.CategoryID == value11).Sum(x => x.Stock);
-            ViewBag.v11 = value11p;
+            
+            var value11 = c.Foods.Where(y => y.CategoryID == c.Categories.Where(x => x.CategoryName == "Vegetables").Select(y => y.CategoryID).FirstOrDefault()).Sum(x => x.Stock);
+            ViewBag.v11 = value11;
 
             var value12=c.Foods.OrderByDescending(x => x.Price).Select(y => y.Name).FirstOrDefault();
             ViewBag.v12=value12;
