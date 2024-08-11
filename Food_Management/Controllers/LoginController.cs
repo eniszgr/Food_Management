@@ -37,7 +37,7 @@ namespace Food_Management.Controllers
                 await HttpContext.SignInAsync(principal);
                 return RedirectToAction("Index","Category");
             }
-            return View();
+            return RedirectToAction("Error");
         }
 
     }
