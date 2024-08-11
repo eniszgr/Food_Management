@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title>Login Error</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+        }
+
+        .errorContainer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+            .errorContainer h1 {
+                font-size: 24px;
+                color: #e74c3c;
+                margin-bottom: 10px;
+            }
+
+            .errorContainer p {
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            .errorContainer a {
+                display: inline-block;
+                padding: 10px 20px;
+                text-decoration: none;
+                color: #fff;
+                background-color: #3498db;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+                .errorContainer a:hover {
+                    background-color: #2980b9;
+                }
+    </style>
+</head>
+<body>
+    <div class="errorContainer">
+        <h1>Login Error</h1>
+        <p>Your name or password was incorrect. Please try again.</p>
+        <a href="/Login/Index">Go Back to Login</a>
+        
+    </div>
+</body>
+</html>

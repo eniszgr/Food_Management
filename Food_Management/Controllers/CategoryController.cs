@@ -2,6 +2,7 @@
 using Food_Management.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Food_Management.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food_Management.Controllers
 {
@@ -9,6 +10,7 @@ namespace Food_Management.Controllers
     {
         CategoryRepository categoryRepository = new CategoryRepository();
 
+       
         public IActionResult Index()
         {  
             return View(categoryRepository.TList());

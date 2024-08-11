@@ -8,5 +8,10 @@ namespace Food_Management.Controllers
         {
             return View();
         }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
