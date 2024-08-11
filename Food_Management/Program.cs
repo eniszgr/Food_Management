@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
-
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,9 +12,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 	options.Cookie.Name = "FoodManagement.Auth";
 	options.LoginPath = "/Login/Index";
 	options.AccessDeniedPath = "/Login/logIn";
+	
 });
 
 
+builder.Services.AddMvc(config =>
+{
+	var policy = new AuthorizationPolicyBuilder()
+		.RequireAuthenticatedUser()
+		.Build();
+	config.Filters.Add(new AuthorizeFilter(policy));
+});
 
 
 var app = builder.Build();

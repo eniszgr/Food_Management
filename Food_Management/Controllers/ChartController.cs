@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Food_Management.Data.Models;
 using NuGet.Packaging.Signing;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Food_Management.Controllers
 {
+    [AllowAnonymous]
     public class ChartController : Controller
     {
         
