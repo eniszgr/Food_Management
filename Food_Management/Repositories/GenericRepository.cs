@@ -1,5 +1,6 @@
 ﻿using Food_Management.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Food_Management.Repositories
 {
@@ -33,6 +34,10 @@ namespace Food_Management.Repositories
         public List<T> TList(string p)
 		{
 			return c.Set<T>().Include(p).ToList();
+		}
+		public List<T> List(Expression<Func<T,bool>> filter)
+		{
+			return c.Set<T>().Where(filter).ToList();	
 		}
     }
 }

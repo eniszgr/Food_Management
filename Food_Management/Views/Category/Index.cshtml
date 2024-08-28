@@ -6,6 +6,12 @@
 
 <h2>Category List</h2>
 <br>
+@using (Html.BeginForm())
+{
+    <p>
+        Food Name: @Html.TextBox("p", "", new { id = "searchBox", placeholder = "Search Category..." })
+    </p>
+}
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
@@ -26,4 +32,6 @@
     } 
 </table>
 <a href="/Category/CategoryAdd" class="btn btn-primary">New Category</a>
+
+
 

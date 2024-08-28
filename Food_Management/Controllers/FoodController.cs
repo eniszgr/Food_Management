@@ -61,8 +61,7 @@ namespace Food_Management.Controllers
             return View(f);
         }
         public IActionResult FoodUpdate(Food p)
-        {
-            var x = foodRepository.TGet(p.FoodID);
+        { var x = foodRepository.TGet(p.FoodID);
             x.Name = p.Name;
             x.Stock = p.Stock;
             x.Price = p.Price;

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 
 namespace Food_Management.Controllers
 {
@@ -8,6 +9,14 @@ namespace Food_Management.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
+            return View();
+        }
+        
+
+        [AllowAnonymous]
+        public IActionResult CategoryDetails(int id)
+        {
+            ViewBag.x = id;
             return View();
         }
     }
