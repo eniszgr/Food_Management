@@ -29,9 +29,25 @@ namespace Food_Management.Controllers
             return View();
         }
         [HttpPost]  
-        public IActionResult AddFood(Food p)
+        public IActionResult AddFood(AddProduct p)
         {
-            foodRepository.TAdd(p);
+            Food f = new Food();
+            if(p.ImageURL != null)
+            {
+                var extension=Path.GetExtension(p.ImageURL.FileName);
+                var newimagename = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/images/",newimagename);
+                var stream=new FileStream(location,FileMode.Create);
+                p.ImageURL.CopyTo(stream);
+                f.ImageURL = newimagename;
+            }
+            f.Name = p.Name;
+            f.Description = p.Description;
+            f.CategoryID = p.CategoryID;
+            f.Stock= p.Stock;
+            f.CategoryID=p.CategoryID;
+            f.Price= p.Price;
+            foodRepository.TAdd(f);
             return RedirectToAction("Index");
         }
         public IActionResult DeleteFood(int id)

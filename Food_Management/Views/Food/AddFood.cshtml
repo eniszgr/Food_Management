@@ -1,13 +1,12 @@
-﻿@model Food_Management.Data.Models.Food
+﻿@model Food_Management.Data.Models.AddProduct
 @{
     ViewData["Title"] = "AddFood";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Food Add Page</h1>
-<br></br>
-@using (Html.BeginForm("AddFood", "Food", FormMethod.Post))
-{
+<br></br>                                                                    
+<form class="form-group" action="AddFood" asp-cotroller="Food" method="post" enctype="multipart/form-data">
     @Html.Label("Food Name")
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
     <br></br>
@@ -17,15 +16,15 @@
     @Html.Label("Price")
     @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
     <br></br>
-    @Html.Label("Image URL")
-    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+    @Html.Label("Choose Image")
+    <input type="file" name="ImageURL"/>
     <br></br>
     @Html.Label("Category")
     @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>) ViewBag.v1, new {@class="form-control"})
     <br></br>
-    @Html.Label("Description")
-    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    <br></br>
+    @Html.Label("Decription")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
     <br></br>
     <button class="btn btn-primary">Add Food</button>
-}
-
+</form>
