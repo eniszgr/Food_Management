@@ -6,7 +6,7 @@ Bu proje, kurum içindeki memnuniyet durumunu değerlendirmek amacıyla hazırla
 
 - [Features](#features)
 - [Technologies](#technologies )
-- [Screen Shoots](#screen-shots)
+- [Screen Shots](#screen-shots)
 - [Licence](#licence)
 
 ## Features
@@ -26,7 +26,8 @@ Bu proje, kurum içindeki memnuniyet durumunu değerlendirmek amacıyla hazırla
 - Google Charts
 - CodeFirst Approach
 
-## Screen-Shoots
+## Screen Shots
+
 ![image](https://github.com/user-attachments/assets/68e05d60-d1df-4cbb-9898-db81e59470f4)
 ![image](https://github.com/user-attachments/assets/4d564b36-6746-4c3f-a223-d1abf974acaf)
 ![image](https://github.com/user-attachments/assets/0e3812ef-b609-4254-856c-2cef38c0771a)
