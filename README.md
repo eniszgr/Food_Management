@@ -25,6 +25,7 @@ Bu proje, kurum içindeki memnuniyet durumunu değerlendirmek amacıyla hazırla
 - JavaScript
 - Google Charts
 - CodeFirst Approach
+- Generic Repository
 
 ## Screen Shots
 
