@@ -2,7 +2,7 @@
 
 Bu proje, kurum içindeki memnuniyet durumunu değerlendirmek amacıyla hazırlanmış bir anket uygulamasıdır. Kullanıcılar, belirli sorulara verdikleri yanıtlar ile kurum hakkındaki düşüncelerini ve memnuniyet seviyelerini paylaşabilirler.
 
-## İçindekiler
+## Contents
 
 - [Features](#features)
 - [Technologies](#technologies )
