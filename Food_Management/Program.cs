@@ -47,7 +47,7 @@ app.UseAuthorization();
 // Map default controller route to CategoryController's Index action
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Category}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.UseStaticFiles();
 app.Run();
