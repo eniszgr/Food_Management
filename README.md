@@ -1,6 +1,7 @@
 # Stock Program With Showcase Page
 
-Bu proje, kurum içindeki memnuniyet durumunu değerlendirmek amacıyla hazırlanmış bir anket uygulamasıdır. Kullanıcılar, belirli sorulara verdikleri yanıtlar ile kurum hakkındaki düşüncelerini ve memnuniyet seviyelerini paylaşabilirler.
+ It is an e-commerce application where we can add, delete and update products via the admin panel.
+ You can examine stock information by visualizing it with google charts.
 
 ## Contents
 
